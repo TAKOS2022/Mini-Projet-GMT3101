@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "269188136093",
+    "project_id": "usertracksapp",
+    "storage_bucket": "usertracksapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269188136093:android:8560def2597e6c85a86874",
+        "android_client_info": {
+          "package_name": "com.example.jutak1.usertracksapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDyxgXmB9lW0cluKlkNBlrzgZ9LRR7a-k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
