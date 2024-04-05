@@ -13,8 +13,12 @@
         android:theme="@style/Theme.UserTracksApp"
         tools:targetApi="31">
         <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:label="@string/title_activity_main" />
+        <activity
             android:name=".SignUpActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,17 +28,6 @@
         <activity
             android:name=".SignInActiviity"
             android:exported="false" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-
-<!--            ADD : Permet de charger l'activite au depart-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
     </application>
 
 </manifest>
