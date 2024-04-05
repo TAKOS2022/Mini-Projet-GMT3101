@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UserTracksApp</string>
+    <string name="MAPS_API_KEY">AIzaSyBCezVSOHSGdsaVfLa63pxe3c25u70iaMc</string>
 </resources>
