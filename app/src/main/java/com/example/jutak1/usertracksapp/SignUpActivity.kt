@@ -1,10 +1,9 @@
 package com.example.jutak1.usertracksapp
 
 import android.content.Intent
-import android.os.Binder
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.jutak1.usertracksapp.databinding.ActivitySignUpBinding
 import com.google.firebase.auth.FirebaseAuth
 
@@ -22,7 +21,7 @@ class SignUpActivity : AppCompatActivity() {
 
 
         binding.textViewSignUp.setOnClickListener{
-            val intent = Intent(this, SignInActiviity::class.java)
+            val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
         }
         binding.btnSignUp.setOnClickListener{
@@ -34,7 +33,7 @@ class SignUpActivity : AppCompatActivity() {
                 if (pass == conFirmPass){
                     firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener{
                         if (it.isSuccessful){
-                            val intent = Intent(this, SignInActiviity::class.java)
+                            val intent = Intent(this, SignInActivity::class.java)
                             startActivity(intent)
                         }else{
                             Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
