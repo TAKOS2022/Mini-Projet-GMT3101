@@ -1,5 +1,6 @@
 package com.example.jutak1.usertracksapp.ui.dashboard
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.jutak1.usertracksapp.CameraActivity
+import com.example.jutak1.usertracksapp.SignInActiviity
 import com.example.jutak1.usertracksapp.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
@@ -32,6 +35,12 @@ class DashboardFragment : Fragment() {
         dashboardViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        binding.cameraButtonDashboard.setOnClickListener{
+            val intent = Intent(getActivity(), CameraActivity::class.java)
+            startActivity(intent)
+        }
+
         return root
     }
 
