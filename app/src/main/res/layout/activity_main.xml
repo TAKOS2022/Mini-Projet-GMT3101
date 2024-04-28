@@ -6,13 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+
+    <fragment
+        android:id="@+id/map_fragment"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvSelectUser"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:text="NEXT STEP !!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="50dp"
+        android:text="Select User"
+        android:background="@drawable/text_bg"
+
+     >
+
+    </TextView>
+
+    <!--    <ImageButton-->
+<!--        android:id="@+id/mapOptionsMenu"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:src="@drawable/switcher_icon"-->
+<!--        android:contentDescription="Image"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        tools:layout_editor_absoluteX="342dp"-->
+<!--        tools:layout_editor_absoluteY="38dp">-->
+
+<!--    </ImageButton>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

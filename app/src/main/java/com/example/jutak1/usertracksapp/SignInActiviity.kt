@@ -43,7 +43,7 @@ class SignInActiviity : AppCompatActivity() {
             }
         }
     }
-// Verifie si l'utilisateur courant est deja authentifie et lance le main activity directement
+ //Verifie si l'utilisateur courant est deja authentifie et lance le main activity directement
 //    override fun onStart() {
 //        super.onStart()
 //        if(firebaseAuth.currentUser != null){

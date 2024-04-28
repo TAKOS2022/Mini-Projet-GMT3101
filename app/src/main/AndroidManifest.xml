@@ -12,14 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UserTracksApp"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCikvEB-cgiUyP_G5LM8wVPLnAnXDW8Xow">
+        </meta-data>
         <activity
             android:name=".SignUpActivity"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
         <activity
             android:name=".SignInActiviity"
@@ -27,13 +31,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
 <!--            ADD : Permet de charger l'activite au depart-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

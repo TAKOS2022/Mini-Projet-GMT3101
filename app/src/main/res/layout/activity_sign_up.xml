@@ -15,7 +15,8 @@ tools:context=".SignUpActivity">
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:layout_height="match_parent"
         android:src="@drawable/backgroundimage"></ImageView>
 
 
@@ -55,10 +56,25 @@ tools:context=".SignUpActivity">
 
         <View
             android:layout_width="wrap_content"
-            android:layout_height="20dp"
+            android:layout_height="10dp"
             >
-
         </View>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom "
+            android:alpha="0.7"
+            >
+        </TextView>
+
+        <EditText
+            android:id="@+id/nomEtSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress">
+
+        </EditText>
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,12 +92,7 @@ tools:context=".SignUpActivity">
 
         </EditText>
 
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            >
 
-        </View>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,12 +111,7 @@ tools:context=".SignUpActivity">
             android:drawableEnd="@drawable/password_icon">
 
         </EditText>
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            >
 
-        </View>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

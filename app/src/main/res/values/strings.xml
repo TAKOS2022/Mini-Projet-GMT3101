@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">UserTracksApp</string>
+    <string name="google_map_api_key">AIzaSyCikvEB-cgiUyP_G5LM8wVPLnAnXDW8Xow</string>
 </resources>
