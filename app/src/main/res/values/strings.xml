@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">UserTracksApp</string>
-    <string name="google_map_api_key">AIzaSyCikvEB-cgiUyP_G5LM8wVPLnAnXDW8Xow</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_map">Map</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
+    <string name="map_api_key">AIzaSyBCezVSOHSGdsaVfLa63pxe3c25u70iaMc</string>
+    <string name="edit_password">Edit password</string>
+    <string name="logout">Logout</string>
+    <string name="delete_account">Delete account</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

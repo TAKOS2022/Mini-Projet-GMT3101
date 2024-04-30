@@ -1,13 +1,13 @@
 package com.example.jutak1.usertracksapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.jutak1.usertracksapp.databinding.ActivitySignInBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class SignInActiviity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySignInBinding
     private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
