@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +16,7 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import com.example.jutak1.usertracksapp.R
-import com.example.jutak1.usertracksapp.databinding.FragmentMapBinding
+import com.example.jutak1.usertracksapp.databinding.FragmentPositionBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -29,12 +30,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
 
 
-class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
+class PositionFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
     private lateinit var mMap: GoogleMap
     private lateinit var lastLocation : Location
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var _binding: FragmentMapBinding? = null
+    private var _binding: FragmentPositionBinding? = null
 
     private lateinit var selectUser: TextView
     private lateinit var dialog: BottomSheetDialog
@@ -55,16 +56,13 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentMapBinding.inflate(inflater, container, false)
+        _binding = FragmentPositionBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
-        val mapFragment = (requireFragmentManager().findFragmentById(R.id.map) as SupportMapFragment?)
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this)
-            mapFragment.onCreate(arguments)
-        }
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
 
         selectUser = binding.tvSelectUser
         selectUser.setOnClickListener{
@@ -83,11 +81,11 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
         val userList = ArrayList<String>()
         firebaseFirestore = FirebaseFirestore.getInstance()
         firebaseFirestore.collection("users").get().addOnSuccessListener {
-                result -> for (document in result){
-            var  userName : String = document.data["name"].toString()
-            println(userName)
-//            userList.add(userName)
-        }
+            result -> for (document in result){
+                var  userName : String = document.data["name"].toString()
+                println(userName)
+                //userList.add(userName)
+            }
         }
 
         for (i in 1..5){
@@ -107,16 +105,17 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
+        Log.d("Map fragment", "map ready")
         mMap = googleMap
 
         mMap.uiSettings.isZoomControlsEnabled = true
         mMap.setOnMarkerClickListener(this)
-        //val sydney = LatLng(-34.0, 151.0)
-        //mMap.addMarker(
-        //MarkerOptions()
-        //.position(sydney)
-        //.title("Marker in Sydney"))
-        //mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        /*val sydney = LatLng(-34.0, 151.0)
+        mMap.addMarker(
+        MarkerOptions()
+        .position(sydney)
+        .title("Marker in Sydney"))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))*/
         setUpMap()
     }
 

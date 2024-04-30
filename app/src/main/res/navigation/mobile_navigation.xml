@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/navigation_map"
-        android:name="com.example.jutak1.usertracksapp.ui.map.MapFragment"
+        android:name="com.example.jutak1.usertracksapp.ui.map.PositionFragment"
         android:label="@string/title_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_position" />
 
     <fragment
         android:id="@+id/navigation_dashboard"
