@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.jutak1.usertracksapp.CameraActivity
-import com.example.jutak1.usertracksapp.SignInActiviity
 import com.example.jutak1.usertracksapp.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
