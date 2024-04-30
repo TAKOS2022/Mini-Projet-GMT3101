@@ -21,11 +21,13 @@ import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.firebase.firestore.FirebaseFirestore
+
 
 class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
 
@@ -58,9 +60,11 @@ class MapFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClickListe
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
 
-        val mapFragment = binding.map
-        mapFragment.getMapAsync(this)
-        mapFragment.onCreate(arguments)
+        val mapFragment = (requireFragmentManager().findFragmentById(R.id.map) as SupportMapFragment?)
+        if (mapFragment != null) {
+            mapFragment.getMapAsync(this)
+            mapFragment.onCreate(arguments)
+        }
 
         selectUser = binding.tvSelectUser
         selectUser.setOnClickListener{
