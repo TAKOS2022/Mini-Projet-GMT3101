@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
 
     <application
         android:allowBackup="true"
@@ -16,6 +17,9 @@
         android:theme="@style/Theme.UserTracksApp"
         tools:targetApi="31">
         <activity
+            android:name=".StepCountActivity"
+            android:exported="false" />
+        <activity
             android:name=".CameraActivity"
             android:exported="false" />
         <activity
@@ -23,16 +27,24 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_main" />
-        <activity
-            android:name=".SignUpActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/title_activity_main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:exported="false">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name=".SignInActivity"
@@ -43,12 +55,13 @@
             android:value="@string/map_api_key" />
 
         <provider
-            android:authorities="com.coding.captureimage.FileProvider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="com.coding.captureimage.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_path"/>
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_path" />
         </provider>
     </application>
 
