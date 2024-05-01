@@ -6,6 +6,11 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/themeColor</item>
     </style>
 
+    <style name="Theme.UserTracksAppWithActionBar" parent="Theme.Material3.DayNight">
+        <item name="android:statusBarColor" tools:targetApi="l">@color/themeColor</item>
+        <item name="android:actionBarStyle">@style/MyActionBarStyle</item>
+    </style>
+
     <style name="Theme.UserTracksApp" parent="Base.Theme.UserTracksApp" />
 
     <style name="BottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
@@ -14,5 +19,9 @@
 
     <style name="BottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/BottomSheetStyle</item>
+    </style>
+
+    <style name="MyActionBarStyle" parent="Widget.Material3.ActionBar.Solid">
+        <item name="android:background">@color/themeColorLight</item>
     </style>
 </resources>

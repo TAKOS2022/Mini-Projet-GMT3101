@@ -105,7 +105,6 @@ class PositionFragment : Fragment(), OnMapReadyCallback, GoogleMap.OnMarkerClick
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        Log.d("Map fragment", "map ready")
         mMap = googleMap
 
         mMap.uiSettings.isZoomControlsEnabled = true
