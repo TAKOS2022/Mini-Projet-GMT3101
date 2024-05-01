@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.jutak1.usertracksapp.CameraActivity
+import com.example.jutak1.usertracksapp.StepCountActivity
 import com.example.jutak1.usertracksapp.databinding.FragmentDashboardBinding
 
 class DashboardFragment : Fragment() {
@@ -28,6 +29,10 @@ class DashboardFragment : Fragment() {
 
         binding.cameraButtonDashboard.setOnClickListener{
             val intent = Intent(getActivity(), CameraActivity::class.java)
+            startActivity(intent)
+        }
+        binding.stepsButtonDashboard.setOnClickListener{
+            val intent = Intent(activity, StepCountActivity::class.java)
             startActivity(intent)
         }
 
